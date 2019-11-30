@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<h2 class='text-center'>Search Results </h2>
+
+<main class="post blog-post col-lg-12"> 
+  <div class="container">
+    <div class="row">
+      {% for post in queryset %}
+      <div class="post col-xl-6" id="moreBox">
+          <div class="post-thumbnail"><a href="{{post.get_absolute_url}}"><img src="{{ post.thumbnail.url }}" alt="..." class="img-fluid"></a></div>
+          <div class="post-details">
+            <div class="post-meta d-flex justify-content-between">
+              <div class="date meta-last">{{ post.publish.date }}</div>
+              {% for cat in post.category.all %}
+              <div class="category"><a href="#">{{ cat }}</a></div>
+              {% endfor %}
+            </div><a href="{{post.get_absolute_url}}">
+              <h3 class="h4">{{ post.title }}</h3></a>
+            
+            <footer class="post-footer d-flex align-items-center"><a href="#" class="author d-flex align-items-center flex-wrap">
+                
+                <div class="title"><span>{{ post.author.username }}</span></div></a>
+            </footer>
+          </div>
+      </div>
+
+      {% endfor %}
+    </div>
+  </div>
+</main>
+
+
+
+
+{% endblock %}
