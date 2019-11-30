@@ -1,1 +1,1 @@
-simple portal site named Blog
+simple content writing platform site named Blog
