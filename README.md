@@ -1,1 +1,1 @@
-"# simple_blog" 
+simple portal site named Blog
